@@ -1,4 +1,4 @@
-# My React Project
+# React Typescript Boilerplate
 
 This project is a React application built with TypeScript, ESLint, Prettier, Jest, and Husky. It includes a setup for linting, formatting, and testing, with automated Git hooks to enforce code quality.
 
@@ -28,3 +28,46 @@ Follow these instructions to set up and run the project locally.
    git clone https://github.com/farhanabsar21/react-typescript-boilerplate-2024.git
    cd react-typescript-boilerplate-2024
    ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Set up Husky (if not already set up):
+
+   ```bash
+   npx husky install
+   ```
+
+4. Run the development server:
+
+   ```bash
+   npm start
+   ```
+
+5. Run tests:
+
+   ```bash
+   npm test
+   ```
+
+### Additional Scripts:
+
+- Build the app for production
+  ```bash
+  npm run build
+  ```
+- Lint the code
+  ```bash
+  npm run lint
+  ```
+- Format the code
+  ```bash
+  npm run format
+  ```
+
+### License:
+
+This project is licensed under the MIT License.
