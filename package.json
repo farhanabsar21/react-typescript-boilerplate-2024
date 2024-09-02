@@ -14,11 +14,6 @@
     "web-vitals": "^2.1.4"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
     "*.{ts,tsx}": [
       "eslint --fix",
       "prettier --write",
