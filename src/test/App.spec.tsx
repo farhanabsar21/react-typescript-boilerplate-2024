@@ -1,16 +1,28 @@
-// App.test.tsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import App from '../App';
+import { MemoryRouter } from 'react-router-dom';
+import App from '../app/App';
 
-test('renders the welcome message', () => {
-  // Render the App component
-  render(<App />);
+// Mock the Users component
+jest.mock('../components/common/Users', () => () => <div>Users Component</div>);
 
-  // Query the heading element by its text
-  const headingElement = screen.getByText(/welcome!/i);
+describe('App Component', () => {
+  test('should render Home component for the root route', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByText(/Welcome!/i)).toBeInTheDocument();
+    expect(screen.getByText(/Users Component/i)).toBeInTheDocument();
+  });
 
-  // Assertion to check if the heading is in the document
-  expect(headingElement).toBeInTheDocument();
+  test('should render NotFound component for a non-existent route', () => {
+    render(
+      <MemoryRouter initialEntries={['/some-random-route']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByText(/Not Found/i)).toBeInTheDocument();
+  });
 });

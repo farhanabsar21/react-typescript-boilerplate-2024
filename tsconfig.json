@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext", // Change from "es5" to "esnext" for better compatibility with Vite
     "lib": [
       "dom",
       "dom.iterable",
@@ -19,7 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["jest", "@testing-library/jest-dom"]
+    "types": ["vite/client", "jest", "@testing-library/jest-dom"] // Add "vite/client" to improve TypeScript integration with Vite
   },
   "include": [
     "src"
